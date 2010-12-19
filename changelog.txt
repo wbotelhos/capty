@@ -1,0 +1,15 @@
+/**
+ * jQuery Capty - A Caption Plugin - http://wbotelhos.com/slidy
+ * --------------------------------------------------------------------------
+ *
+ * 0.1.0
+ *  - Option to choose the class name of the wrapper caption;
+ *  - Option to choose the class name of the wrapper image;
+ *  - Option to choose the class name of the wrapper image and caption;
+ *  - Option to enable the height of the caption;
+ *  - Option to enable the opacity of the caption;
+ *  - Option to change the speed in which caption will appear and disappear;
+ *  - Option to change the speed in which caption will appear and disappear;
+ *  - Option to change the speed in which caption will appear and disappear.
+ *
+ */

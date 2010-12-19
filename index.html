@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-animation" content="text/html; charset=UTF-8">
+
+		<title>jQuery Capty - A Caption Plugin</title>
+
+		<link type="text/css" rel="stylesheet" href="css/jquery.capty.css"/>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.capty.min.js"></script>
+
+		<style type="text/css">
+			body {
+				font: 10px verdana;
+			}
+
+			a#coffee-link, div#coffee-container {
+				border-radius: 4px;
+				-khtml-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-opera-border-radius: 4px;
+				-webkit-border-radius: 4px;
+			}
+
+			div#link a {
+				color: #EA9C00;
+				font: bold 10px verdana;
+				letter-spacing: .9px;
+				text-decoration: none;
+			}
+			
+			div#link a:hover {
+				color: #DC5;
+				font-weight: bold;
+				letter-spacing: .9px;
+				text-decoration: underline;
+			}
+
+			a#coffee-link {
+				background: url('img/coffee.png') 6px 2px no-repeat;
+				border: 1px solid #D9C640;
+				color: #FFF;
+				display: block;
+				font-weight: bold;
+				letter-spacing: .9px;
+				padding: 4px 5px 4px 26px;
+				text-decoration: none;
+			}
+
+			a#coffee-link:hover {
+				text-decoration: underline;
+			}
+
+			div#coffee-container {
+				background-color: #DC5;
+				float: right;
+				margin-right: 15px;
+			}
+
+			div.description {
+				color: #555;
+				letter-spacing: .1px;
+				margin-bottom: 10px;
+				text-indent: 7px;
+				text-align: left;
+				width: 99%;
+			}
+
+			div#link {
+				color: #AB9927;
+				text-indent: 7px;
+			}
+
+			div.notice {
+				font: 9px verdana;
+				color: #777;
+				letter-spacing: .1px;
+				margin-bottom: 3px;
+				text-indent: 7px;
+				text-align: left;
+				width: 99%;
+			}
+
+			div.session {
+				font: bold 13px verdana;
+				border-bottom: 1px solid #EFEFEF;
+				color: #444;
+				letter-spacing: .7px;
+				margin-bottom: 10px;
+				margin-top: 24px;
+				text-align: left;
+				width: 99%;
+			}
+
+			div.source, div.source-group {
+				background: #F8F8FF;
+				border: 1px solid #EFEFEF;
+				border-left: 3px solid #CCC;
+				color: #444;
+				font: 12px monospace;
+				letter-spacing: .1px;
+				margin-bottom: 7px;
+				margin-top: 5px;
+				padding: 7px;
+				width: 99%;
+			}
+
+			div.text {
+				color: #555;
+				letter-spacing: .1px;
+				margin-bottom: 20px;
+				margin-top: 5px;
+				text-align: left;
+				text-indent: 7px;
+				width: 99%;
+			}
+
+			div.title {
+				font: bold 17px verdana;
+				color: #269;
+				letter-spacing: .7px;
+				margin-bottom: 20px;
+				margin-top: 5px;
+				text-align: left;
+				width: 99%;
+			}
+			
+			span.comment-html, span.comment-script {
+				font: 12px monospace;
+				letter-spacing: .1px;
+				margin-bottom: 7px;
+				margin-top: 5px;
+			}
+
+			span.comment-html {
+				color: #5e85de;
+			}
+
+			span.comment-script {
+				color: #578F73;
+			}
+
+			span#version {
+				color: #777;
+				font: 10px verdana;
+			}
+
+			div.group {
+				float: left;
+				margin-right: 10px;
+			}
+
+			div.source-group {
+				margin-top: 125px;
+			}
+
+			/* custom cWrapper class */
+			div.capty-tile {
+				float: left;
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">jQuery Capty - A Caption Plugin <span id="version">(current version: 0.1.0)</span></div>
+
+		<div id="link">
+			| <a href="http://github.com/downloads/wbotelhos/capty/jquery.capty-0.1.0.zip" target="_blank">Download</a> |
+			<a href="http://github.com/wbotelhos/capty" target="_blank">Github</a> |
+			<a href="http://wbotelhos.com/capty/changelog.txt" target="_blank">Change Log</a> |
+			<a href="http://wbotelhos.com/capty/README.txt" target="_blank">Readme</a> |
+			<a href="http://wbotelhos.com/capty/LICENSE.txt" target="_blank">Licence</a> |
+		</div>
+
+		<div id="coffee-container">
+			<a id="coffee-link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=X8HEP2878NDEG&amp;item_name=jQuery%20Capty" target="_blank">buy me a coffee</a>
+		</div><br/>
+
+		<div class="text">jQuery <strong>Capty</strong> is a plugin that generates a customizable caption automatically.</div>
+
+		<div class="session">With default options:</div>
+
+		<img id="capty" src="img/image.jpg" alt="Super Mario Bros.&reg;"/>
+		
+		<div class="source">
+			$('#capty').capty();<br/><br/>
+
+			&lt;img id="capty" src="image.jpg" alt="Super Mario Bros.&reg;"/&gt;
+		</div>
+
+		<div class="session">A custom caption with a external content:</div>
+
+		<img id="content" src="img/image.jpg" alt="" name="#content-target"/>
+
+		<div id="content-target">
+			<span style="color: #F00;">Mario</span> - Super Mario Bros.&reg;<br/> 
+			<a href="javascript:void(0);"/>http://www.mariobros.com</a>
+		</div>
+
+		<div class="source">
+			$('#content').capty({<br/>
+			&nbsp;&nbsp;height:&nbsp;&nbsp;&nbsp;46,<br/>
+			&nbsp;&nbsp;opacity:&nbsp;&nbsp;.6,<br/>
+			&nbsp;&nbsp;speed:&nbsp;&nbsp;&nbsp;&nbsp;150<br/>
+			});<br/><br/>
+
+			&lt;img id="content" src="image.jpg" name="<b>#content-target</b>"/&gt;<br/><br/>
+
+			&lt;div id="<b>content-target</b>"&gt;<br/>
+			&nbsp;&nbsp;&lt;span style="color: #F00"&gt;Mario&lt;/span&gt; - Super Mario Bros.&reg;&lt;br/&gt;<br/>
+			&nbsp;&nbsp;&lt;a href="#"/&gt;http://www.mariobros.com&lt;/a&gt;<br/>
+			&lt;/div&gt;
+		</div>
+
+		<div class="session">A group of elements with sufix, prefix and a custom style:</div>
+
+		<div style="height: 170px;">
+			<img src="img/image-1.jpg" alt="" class="fix"/>
+			<img src="img/image-2.jpg" alt="" class="fix"/>
+			<img src="img/image-3.jpg" alt="" class="fix"/>
+		</div>
+
+		<div class="source">
+			$('.fix').capty({<br/>
+			&nbsp;&nbsp;cWrapper:&nbsp;&nbsp;'capty-tile',<br/>
+			&nbsp;&nbsp;prefix:&nbsp;&nbsp;&nbsp;&nbsp;'&lt;span style="color: #F0F"&gt;Luigui&lt;/span&gt;',<br/>
+			&nbsp;&nbsp;sufix:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Super Mario Bros.&reg;'<br/>
+			});<br/><br/>
+
+			&lt;img src="image-1.jpg" class="fix"/&gt;<br/>
+			&lt;img src="image-2.jpg" class="fix"/&gt;<br/>
+			&lt;img src="image-3.jpg" class="fix"/&gt;
+		</div><br/>
+
+		<span class="comment-script">
+			- You can use cWrapper, cImage and cCaption to use different styles for different Captys.
+		</span><br/>
+
+		<div class="session">Default options:</div>
+
+		<div class="source">
+		 	cCaption:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'capty-caption'
+		 	<div class="notice">The class name of the wrapper caption.</div>
+
+		 	cImage:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'capty-image'
+		 	<div class="notice">The class name of the wrapper image.</div>
+
+		 	cWrapper:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'capty-wrapper'
+		 	<div class="notice">The class name of the wrapper image and caption.</div>
+
+		 	height:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30
+		 	<div class="notice">The height of the caption.</div>
+
+			opacity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.7
+		 	<div class="notice">The opacity of the caption.</div>
+
+			prefix:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''
+		 	<div class="notice">The speed in which caption will appear and disappear.</div>
+
+			speed:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200
+		 	<div class="notice">The speed in which caption will appear and disappear.</div>
+
+			sufix:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''
+		 	<div class="notice">The speed in which caption will appear and disappear.</div>
+		</div>
+
+		<div class="session">Images references:</div>
+		<a href="http://www.flickr.com/photos/threedancingmagpies/5112075327" target="_blank">image 1</a> -
+		<a href="http://www.flickr.com/photos/threedancingmagpies/5112672548" target="_blank">image 2</a> -
+		<a href="http://www.flickr.com/photos/threedancingmagpies/5112670860" target="_blank">image 3</a> -
+		<a href="http://www.flickr.com/photos/threedancingmagpies/5112071405" target="_blank">image 4</a>
+	</body>
+	
+	<script type="text/javascript">
+		$(function() {
+
+			$('#capty').capty();
+
+			$('#content').capty({
+				height:		46,
+				opacity:	.6,
+				speed:		150
+			});
+
+			$('.fix').capty({
+				cWrapper:	'capty-tile',
+				prefix:		'<span style="color: #35BB87;">Luigui</span> - ',
+				sufix:		'Super Mario Bros.&reg;'
+			});
+
+		});
+	</script>
+</html>
