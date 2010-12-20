@@ -1,5 +1,5 @@
 /**
- * jQuery Capty - A Caption Plugin - http://wbotelhos.com/slidy
+ * jQuery Capty - A Caption Plugin - http://wbotelhos.com/capty
  * --------------------------------------------------------------------------
  *
  * 0.1.0

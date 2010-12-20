@@ -21,9 +21,9 @@
  * cWrapper:    'capty-wrapper'     // The class name of the wrapper image and caption.
  * height:      30                  // The height of the caption.
  * opacity:     .7                  // The opacity of the caption.
- * prefix:      ''                  // The speed in which caption will appear and disappear.
+ * prefix:      ''                  // The text/html that will be applied at the beginning of the legend.
  * speed:       200                 // The speed in which caption will appear and disappear.
- * sufix:       ''                  // The speed in which caption will appear and disappear.
+ * sufix:       ''                  // The text/html that will be applied at the end of the caption.
  *
  * Usage with default values:
  * --------------------------------------------------------------------------
