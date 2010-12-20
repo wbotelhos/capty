@@ -30,6 +30,6 @@
  *
  * $('#capty').capty();
  *
- * <img id="capty" src="image.jpg" alt="Super Mario Bros.&reg;"/>
+ * <img id="capty" src="image.jpg" alt="Super Mario Bros.&reg;" width="150" height="150"/>
  *
  */
