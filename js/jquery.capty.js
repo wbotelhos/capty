@@ -111,7 +111,7 @@
 		} else if (options.animation == 'fixed') {
 			$caption.css('top', (-1 * options.height) + 'px');
 		} else {
-			debug($this.attr('id') + ': invalide animation!');
+			debug($this.attr('id') + ': invalid animation!');
 		}
 
 		return $this;
