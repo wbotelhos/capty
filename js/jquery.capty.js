@@ -2,11 +2,11 @@
  * jQuery Capty - A Caption Plugin - http://wbotelhos.com/capty
  * ---------------------------------------------------------------------------------
  *
- * jQuery Capty is a plugin that generates a customizable caption automatically.
+ * jQuery Capty is a plugin that creates captions over the images.
  *
  * Licensed under The MIT License
  *
- * @version         0.1.0
+ * @version         0.2.0
  * @since           12.18.2010
  * @author          Washington Botelho dos Santos
  * @documentation   wbotelhos.com/capty
@@ -79,20 +79,40 @@
 			$caption.append(options.sufix);
 		}
 
-		$wrapper
-		.css({
+		$wrapper.css({
 			overflow:	'hidden',
 			height:		$this.height(),
 			width:		$this.width()
-		})
-		.hover(
-			function() {
-				$caption.animate({ top: (-1 * options.height) }, { duration: options.speed,  queue: false });
-			},
-    		function() {
-				$caption.animate({ top: 0 }, { duration: options.speed, queue: false });
-			}
-    	);
+		});
+
+		if (options.animation == 'slide') {
+			$wrapper.hover(
+				function() {
+					$caption.animate({ top: (-1 * options.height) }, { duration: options.speed,  queue: false });
+				},
+	    		function() {
+					$caption.animate({ top: 0 }, { duration: options.speed, queue: false });
+				}
+	    	);
+		} else if (options.animation == 'fade') {
+			$caption.css({
+				opacity:	0,
+				top:		(-1 * options.height) + 'px'
+			});
+
+			$wrapper.hover(
+				function() {
+					$caption.stop().animate({ opacity: options.opacity }, options.speed);
+				},
+	    		function() {
+					$caption.stop().animate({ opacity: 0 }, options.speed);
+				}
+	    	);
+		} else if (options.animation == 'fixed') {
+			$caption.css('top', (-1 * options.height) + 'px');
+		} else {
+			debug($this.attr('id') + ': invalide animation!');
+		}
 
 		return $this;
 	};
@@ -104,6 +124,7 @@
 	};
 
 	$.fn.capty.defaults = {
+		animation:	'slide',
 		cCaption:	'capty-caption',
 		cImage:		'capty-image',
 		cWrapper:	'capty-wrapper',
