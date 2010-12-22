@@ -2,11 +2,11 @@
  * jQuery Capty - A Caption Plugin - http://wbotelhos.com/capty
  * --------------------------------------------------------------------------
  *
- * jQuery Capty is a plugin that generates a customizable caption automatically.
+ * jQuery Capty is a plugin that creates captions over the images.
  *
  * Licensed under The MIT License
  * 
- * @version     0.1.0
+ * @version     0.2.0
  * @since       11.16.2010
  * @author      Washington Botelho dos Santos
  * @link        http://wbotelhos.com/capty
@@ -16,6 +16,7 @@
  * 
  * Default values:
  * --------------------------------------------------------------------------
+ * animation:   'slide'             // The captions animation type: 'slide', 'fade' or 'fixed'.
  * cCaption:    'capty-caption'     // The class name of the wrapper caption.
  * cImage:      'capty-image'       // The class name of the wrapper image.
  * cWrapper:    'capty-wrapper'     // The class name of the wrapper image and caption.
