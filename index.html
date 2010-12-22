@@ -166,10 +166,10 @@
 		</style>
 	</head>
 	<body>
-		<div class="title">jQuery Capty - A Caption Plugin <span id="version">(current version: 0.1.0)</span></div>
+		<div class="title">jQuery Capty - A Caption Plugin <span id="version">(current version: 0.2.0)</span></div>
 
 		<div id="link">
-			| <a href="http://github.com/downloads/wbotelhos/capty/jquery.capty-0.1.0.zip" target="_blank">Download</a> |
+			| <a href="http://github.com/downloads/wbotelhos/capty/jquery.capty-0.2.0.zip" target="_blank">Download</a> |
 			<a href="http://github.com/wbotelhos/capty" target="_blank">Github</a> |
 			<a href="http://wbotelhos.com/capty/changelog.txt" target="_blank">Change Log</a> |
 			<a href="http://wbotelhos.com/capty/README.txt" target="_blank">Readme</a> |
@@ -180,43 +180,75 @@
 			<a id="coffee-link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=X8HEP2878NDEG&amp;item_name=jQuery%20Capty" target="_blank">buy me a coffee</a>
 		</div><br/>
 
-		<div class="text">jQuery <strong>Capty</strong> is a plugin that generates a customizable caption automatically.</div>
+		<div class="text">jQuery <strong>Capty</strong> is a plugin jQuery Capty is a plugin that creates captions over the images.</div>
 
-		<div class="session">With default options:</div>
+		<div id="default-demo" class="session">With default options:</div>
 
-		<img id="capty" src="img/image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/>
+		<img id="default" src="img/image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/>
 		
 		<div class="source">
-			$('#capty').capty();<br/><br/>
+			$('#default').capty();<br/><br/>
 
-			&lt;img id="capty" src="image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/&gt;
+			&lt;img id="default" src="image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/&gt;
+		</div><br/>
+
+		<span class="comment-script">
+			- The tag "alt" is used to apply the caption by default.
+		</span><br/>
+
+		<div id="animation-demo" class="session">With animation and a custom speed:</div>
+
+		<img id="animation" src="img/image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/>
+
+		<div class="source">
+			$('#animation').capty({<br/>
+			&nbsp;&nbsp;animation:&nbsp;'fade',<br/>
+			&nbsp;&nbsp;speed:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400<br/>
+			});<br/><br/>
+
+			&lt;img id="animation" src="image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/&gt;
 		</div>
 
-		<div class="session">A custom caption with a external content:</div>
+		<div id="fixed-demo" class="session">With fixed caption:</div>
+
+		<img id="fixed" src="img/image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/>
+
+		<div class="source">
+			$('#fixed').capty({<br/>
+			&nbsp;&nbsp;animation:&nbsp;'fixed'<br/>
+			});<br/><br/>
+
+			&lt;img id="fixed" src="image.jpg" alt="Super Mario Bros.&reg;" width="342" height="262"/&gt;
+		</div>
+
+		<div id="content-demo" class="session">A custom caption with a external content:</div>
 
 		<img id="content" src="img/image.jpg" alt="" name="#content-target" width="342" height="262"/>
 
 		<div id="content-target">
 			<span style="color: #F00;">Mario</span> - Super Mario Bros.&reg;<br/> 
-			<a href="javascript:void(0);"/>http://www.mariobros.com</a>
+			<a href="javascript:void(0);">http://www.mariobros.com</a>
 		</div>
 
 		<div class="source">
 			$('#content').capty({<br/>
 			&nbsp;&nbsp;height:&nbsp;&nbsp;&nbsp;46,<br/>
-			&nbsp;&nbsp;opacity:&nbsp;&nbsp;.6,<br/>
-			&nbsp;&nbsp;speed:&nbsp;&nbsp;&nbsp;&nbsp;150<br/>
+			&nbsp;&nbsp;opacity:&nbsp;&nbsp;.6<br/>
 			});<br/><br/>
 
 			&lt;img id="content" src="image.jpg" name="<b>#content-target</b>" width="342" height="262"/&gt;<br/><br/>
 
 			&lt;div id="<b>content-target</b>"&gt;<br/>
-			&nbsp;&nbsp;&lt;span style="color: #F00"&gt;Mario&lt;/span&gt; - Super Mario Bros.&reg;&lt;br/&gt;<br/>
-			&nbsp;&nbsp;&lt;a href="#"/&gt;http://www.mariobros.com&lt;/a&gt;<br/>
+			&nbsp;&nbsp;&lt;span style="color: #F00;"&gt;Mario&lt;/span&gt; - Super Mario Bros.&reg;&lt;br/&gt;<br/>
+			&nbsp;&nbsp;&lt;a href="javascript:void(0);"&gt;http://www.mariobros.com&lt;/a&gt;<br/>
 			&lt;/div&gt;
-		</div>
+		</div><br/>
 
-		<div class="session">A group of elements with sufix, prefix and a custom style:</div>
+		<span class="comment-script">
+			- The tag "name" is used to link the external content.
+		</span><br/>
+
+		<div id="fix-demo" class="session">A group of elements with sufix, prefix and a custom style:</div>
 
 		<div style="height: 170px;">
 			<img src="img/image-1.jpg" alt="" class="fix" width="240" height="161"/>
@@ -227,7 +259,7 @@
 		<div class="source">
 			$('.fix').capty({<br/>
 			&nbsp;&nbsp;cWrapper:&nbsp;&nbsp;'capty-tile',<br/>
-			&nbsp;&nbsp;prefix:&nbsp;&nbsp;&nbsp;&nbsp;'&lt;span style="color: #F0F"&gt;Luigui&lt;/span&gt;',<br/>
+			&nbsp;&nbsp;prefix:&nbsp;&nbsp;&nbsp;&nbsp;'&lt;span style="color: #35BB87"&gt;Luigui&lt;/span&gt;',<br/>
 			&nbsp;&nbsp;sufix:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Super Mario Bros.&reg;'<br/>
 			});<br/><br/>
 
@@ -243,6 +275,9 @@
 		<div class="session">Default options:</div>
 
 		<div class="source">
+		 	animation:&nbsp;&nbsp;&nbsp;&nbsp;'slide'
+		 	<div class="notice">The captions animation type: 'slide', 'fade' or 'fixed'.</div>
+
 		 	cCaption:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'capty-caption'
 		 	<div class="notice">The class name of the wrapper caption.</div>
 
@@ -278,12 +313,20 @@
 	<script type="text/javascript">
 		$(function() {
 
-			$('#capty').capty();
+			$('#default').capty();
+
+			$('#animation').capty({
+				animation: 'fade',
+				speed:		400
+			});
+
+			$('#fixed').capty({
+				animation:	'fixed'
+			});
 
 			$('#content').capty({
 				height:		46,
-				opacity:	.6,
-				speed:		150
+				opacity:	.6
 			});
 
 			$('.fix').capty({
