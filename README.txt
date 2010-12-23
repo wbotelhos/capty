@@ -7,7 +7,7 @@
  * Licensed under The MIT License
  * 
  * @version     0.2.0
- * @since       11.16.2010
+ * @since       12.18.2010
  * @author      Washington Botelho dos Santos
  * @link        http://wbotelhos.com/capty
  * @twitter     http://twitter.com/wbotelhos
