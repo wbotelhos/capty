@@ -3,7 +3,7 @@
  * --------------------------------------------------------------------------
  *
  * 0.2.0
- *  - Added animation attribute. Choose the captions animation type. 'slide', 'fade' or 'fixed';
+ *  - Added animation attribute. Choose the captions animation type: 'slide', 'fade' or 'fixed';
  *
  * 0.1.0
  *  - Option to choose the class name of the wrapper caption;
