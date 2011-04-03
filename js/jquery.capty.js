@@ -6,7 +6,7 @@
  *
  * Licensed under The MIT License
  *
- * @version         0.2.0
+ * @version         0.2.1
  * @since           12.18.2010
  * @author          Washington Botelho dos Santos
  * @documentation   wbotelhos.com/capty
