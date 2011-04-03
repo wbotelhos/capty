@@ -14,6 +14,10 @@
  * @license     http://www.opensource.org/licenses/mit-license.php MIT 
  * @package     jQuery Plugins
  * 
+ * Thanks to:
+ * --------------------------------------------------------------------------
+ * DinisM
+ *
  * Default values:
  * --------------------------------------------------------------------------
  * animation:   'slide'             // The captions animation type: 'slide', 'fade' or 'fixed'.
