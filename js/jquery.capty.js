@@ -88,7 +88,7 @@
 		if (options.animation == 'slide') {
 			$wrapper.hover(
 				function() {
-					$caption.animate({ top: (-1 * options.height) }, { duration: options.speed,  queue: false });
+					$caption.animate({ top: (-1 * options.height) }, { duration: options.speed, queue: false });
 				},
 	    		function() {
 					$caption.animate({ top: 0 }, { duration: options.speed, queue: false });
