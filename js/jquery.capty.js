@@ -48,6 +48,13 @@
 		var $image		= $elem.wrap('<div class="' + options.cImage + '"/>').parent(),
 			$wrapper	= $image.wrap('<div class="' + options.cWrapper + '"/>').parent();
 
+		$wrapper.css({
+			height:		$this.height(),
+			overflow:	'hidden',
+			position:	'relative',
+			width:		$this.width()
+		});
+
 		$caption.css({
 			height:		options.height,
 			opacity:	options.opacity,
@@ -57,7 +64,6 @@
 			evt.stopPropagation();
 		})
 		.appendTo($wrapper);
-
 
 		if (name) {
 			var $content = $(name);
@@ -78,12 +84,6 @@
 		if (options.sufix) {
 			$caption.append(options.sufix);
 		}
-
-		$wrapper.css({
-			overflow:	'hidden',
-			height:		$this.height(),
-			width:		$this.width()
-		});
 
 		if (options.animation == 'slide') {
 			$wrapper.hover(
