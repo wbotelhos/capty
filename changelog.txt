@@ -3,10 +3,10 @@
  * --------------------------------------------------------------------------
  *
  * 0.2.1
- *  - Fixed the caption overflow in IE7. (by DinisM)
+ *  - - Fixed the caption overflow in IE6 and IE7. (by DinisM)
  *
  * 0.2.0
- *  - Added animation attribute. Choose the captions animation type: 'slide', 'fade' or 'fixed';
+ *  - Added animation attribute. Choose the captions animation type: 'slide', 'fade' or 'fixed'.
  *
  * 0.1.0
  *  - Option to choose the class name of the wrapper caption;
