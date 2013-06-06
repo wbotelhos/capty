@@ -49,6 +49,7 @@
 			$wrapper	= $image.wrap('<div class="' + options.cWrapper + '"/>').parent();
 
 		$wrapper.css({
+			float:		$this.css('float'),
 			height:		$this.height(),
 			overflow:	'hidden',
 			position:	'relative',
